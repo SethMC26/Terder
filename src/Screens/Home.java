@@ -35,7 +35,7 @@ public class Home extends JPanel {
             g2.setFont((new Font("Monospaced",Font.PLAIN,20)));
             g2.drawString(command,15,lastTextPos);
             System.out.println("MR GEORGE HOW MUCH YOU PAY THE FOR LOOP");
-            lastTextPos += 15;
+            lastTextPos += 20;
         }
 
 
@@ -45,9 +45,19 @@ public class Home extends JPanel {
     }
 
     public void sendCommand(String command) {
-        String commandText = ">>" + command;
-        commands.add(commandText);
-        homeText = command;
+        String commandText;
+        switch (command) {
+            case "Y":
+                commandText = ">>" + command;
+                commands.add(commandText);
+                commands.add("WE CAN PROCCEED...");
+                break;
+            default:
+                commandText = ">>" + command;
+                commands.add(commandText);
+                commands.add("BAD INPUT >:(");
+                commands.add(dialog.get(1));
+        }
         repaint();
     }
 }
