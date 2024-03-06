@@ -52,11 +52,17 @@ public class Home extends JPanel {
                 commands.add(commandText);
                 commands.add("WE CAN PROCCEED...");
                 break;
+            case "I eat the fish":
+                commandText = ">>" + command;
+                commands.add(commandText);
+                commands.add("yes");
+                break;
             default:
                 commandText = ">>" + command;
                 commands.add(commandText);
                 commands.add("BAD INPUT >:(");
                 commands.add(dialog.get(1));
+                break;
         }
         repaint();
     }
